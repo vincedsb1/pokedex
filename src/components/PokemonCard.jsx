@@ -24,6 +24,14 @@ function PokemonCard(props) {
     )
 }
 
+pokemon.propTypes = {
+    pokemonList: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string.isRequired,
+    }).isRequired,
+  }
+  
+
 // function PokemonCard() {
 //     let pokemon = pokemonList[1];
 //     let pokemonCheckSrc = pokemon.imgSrc !== "" ? "<p>..." : pokemon.imgSrc;
