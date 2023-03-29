@@ -15,8 +15,8 @@ const img= {
 };
 
 
-function PokemonCard() {
-    let pokemon = pokemonList[0];
+function PokemonCard(props) {
+    let pokemon = props.pokemon;
     return (
         <figure style={card}>
             {pokemon.imgSrc === undefined || null ? <p>???</p> : <img src={pokemon.imgSrc} style={img}></img>}
