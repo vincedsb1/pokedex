@@ -20,7 +20,6 @@ const img= {
 function PokemonCard({pokemon}) {
     return (
         <figure style={card}>
-            {/* {pokemon.imgSrc === undefined || null ? <p>???</p> : <img src={pokemon.imgSrc} style={img}></img>} */}
             {pokemon.imgSrc ? <img src={pokemon.imgSrc} style={img} alt={pokemon.name} /> : <p>???</p>}
         </figure>
     )
