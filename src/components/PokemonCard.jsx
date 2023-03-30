@@ -15,21 +15,17 @@ const img= {
 };
 
 
-function PokemonCard(props) {
+function PokemonCard({props}) {
     let pokemon = props.pokemon;
     return (
         <figure style={card}>
-            {pokemon.imgSrc === undefined || null ? <p>???</p> : <img src={pokemon.imgSrc} style={img}></img>}
+            {/* {pokemon.imgSrc === undefined || null ? <p>???</p> : <img src={pokemon.imgSrc} style={img}></img>} */}
+            {pokemon.imgSrc ? <img src={pokemon.imgSrc} style={img} alt={pokemon.name} /> : <p>???</p>}
         </figure>
     )
 }
 
-pokemon.propTypes = {
-    pokemonList: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      imgSrc: PropTypes.string.isRequired,
-    }).isRequired,
-  }
+
   
 
 // function PokemonCard() {
@@ -56,3 +52,10 @@ pokemon.propTypes = {
 
 
 export default PokemonCard;
+
+pokemon.propTypes = {
+    pokemon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string.isRequired,
+    })
+  }
